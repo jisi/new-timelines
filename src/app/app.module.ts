@@ -14,6 +14,7 @@ import {LoginStatusComponent} from "./login-status/login-status.component";
 import {LoginGuardService} from "./login-guard.service";
 import {UserService} from './user.service';
 
+
 var firebaseConfig = {
   apiKey: "AIzaSyA6THjic5wZMGInGdlmHeAYG80fB8RoM3s",
   authDomain: "timelines-c2d38.firebaseapp.com",
