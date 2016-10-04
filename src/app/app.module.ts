@@ -6,14 +6,15 @@ import {routing, appRoutingProviders} from './app.routing';
 import {AppComponent} from './app.component';
 import {AuthMethods, AngularFireModule} from "angularfire2";
 
-//import {HomeComponent} from './home/home.component';
-//import {AboutComponent} from './about/about.component';
+import {HomeComponent} from './home/home.component';
+import {AboutComponent} from './about/about.component';
 import {TimelineManagerComponent} from "./timeline-manager/timeline-manager.component";
 import {LoginComponent} from "./login/login.component";
 import {LoginStatusComponent} from "./login-status/login-status.component";
 import {LoginGuardService} from "./login-guard.service";
 import {UserService} from './user.service';
 
+import {ValuesPipe} from './home/home.component';
 
 
 var firebaseConfig = {
@@ -30,12 +31,14 @@ var firebaseAuthConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    //HomeComponent,
-    //AboutComponent,
+    HomeComponent,
+    AboutComponent,
     LoginComponent,
     LoginStatusComponent,
-    TimelineManagerComponent
+    TimelineManagerComponent,
+  ValuesPipe
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
