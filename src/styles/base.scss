@@ -1,43 +1,16 @@
-
-
-/* spinner animation by http://tobiasahlin.com/spinkit/ */
-.startup-spinner {
-  width: 2rem;
-  height: 2rem;
-  position: relative;
-  margin: calc(50vh - 2rem) auto;
-}
-
-.startup-spinner__item-1,
-.startup-spinner__item-2 {
-  width: 100%;
+body {
   height: 100%;
-  border-radius: 50%;
-  background-color: #333;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-animation: anim-bounce 2.0s infinite ease-in-out;
-  animation: anim-bounce 2.0s infinite ease-in-out;
+  margin: 0;
+  background-color: #FFF;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.startup-spinner__item-2 {
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
+.content-header {
+  font-weight: 300;
+  font-size: 24px;
 }
 
-@-webkit-keyframes anim-bounce {
-  0%, 100% { -webkit-transform: scale(0.0) }
-  50% { -webkit-transform: scale(1.0) }
-}
-
-@keyframes anim-bounce {
-  0%, 100% {
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 50% {
-      transform: scale(1.0);
-      -webkit-transform: scale(1.0);
-    }
+.main-content {
+  margin: 40px 80px;
+  min-height: 35vh
 }
