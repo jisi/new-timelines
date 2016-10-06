@@ -1,12 +1,8 @@
-/**
- * Created by isa on 03/10/16.
- */
+import {Component} from '@angular/core';
+import {AngularFire} from 'angularfire2/angularfire2';
+import {Router} from '@angular/router';
 
-import { Component } from '@angular/core';
-import { AngularFire } from 'angularfire2/angularfire2';
-import { UserService } from '../user.service';
-import { Router } from '@angular/router';
-
+import {UserService} from "../services/user.service";
 
 @Component({
   selector: 'login-status',

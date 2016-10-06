@@ -1,14 +1,12 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { UserService } from '../user.service';
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
+
+import {UserService} from "../services/user.service";
 
 @Component({
   selector: 'login',
-  templateUrl: './login.component.html',
-  providers: [ UserService ]
+  templateUrl: './login.component.html'
 })
-
-
 
 export class LoginComponent {
 

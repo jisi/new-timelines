@@ -1,7 +1,3 @@
-/**
- * Created by isa on 03/10/16.
- */
-
 import { Injectable } from '@angular/core';
 import { AngularFire, AuthMethods, AuthProviders } from 'angularfire2/angularfire2';
 
