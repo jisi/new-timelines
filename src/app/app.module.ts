@@ -14,7 +14,7 @@ import {TimelineListModule} from "./timeline-list/timeline-list.module";
 import {TimelineManagerComponent} from "./timeline-manager/timeline-manager.component";
 
 //pipes
-import {ValuesPipe} from './home/home.component';
+import {ValuesPipe} from './timeline-manager/timeline-manager.component';
 
 //directives
 import {MDLUpdateElementDirective} from "./shared/mdl-update-elements.directive";
