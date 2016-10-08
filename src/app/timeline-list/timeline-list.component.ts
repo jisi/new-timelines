@@ -6,6 +6,7 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
   templateUrl: './timeline-list.component.html',
   styleUrls: ['./timeline-list.component.scss']
 })
+
 export class TimelineListComponent {
 
   timelines: FirebaseListObservable<any>;

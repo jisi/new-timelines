@@ -10,6 +10,7 @@ import {NgModule} from '@angular/core';
 export class ValuesPipe implements PipeTransform {
   transform(value:any, args:any[] = null):any {
     if (value) {
+      console.log(value);
       return Object.keys(value).map(key => value[key]);
     }
   }

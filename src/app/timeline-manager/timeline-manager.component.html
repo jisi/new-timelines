@@ -15,20 +15,20 @@
 
   <form>
 
-    <input type="text" [(ngModel)]="timeline.event_date" name="userInputDate + timeline.key">
-    <input type="text" [(ngModel)]="timeline.event_description" name="userInputEvent">
+    <input type="text" [(ngModel)]="timeline.event_date" name="userInputDate + timeline.key" #eventDate="ngModel">
+    <input type="text" [(ngModel)]="timeline.event_description" name="userInputEvent" #eventDescription="ngModel">
 
-    <button class="addEventButton" (click)="addEvent(timeline)">Add Event</button>
+    <button class="addEventButton" type="button" (click)="addEvent(timeline)">Add Event</button>
 
     <div class="event-title">Events:</div>
 
-    <div *ngFor="let datapoint of timeline.datapoints | values">
+    <div *ngFor="let datapoint of timeline.datapoints | values; let i = index">
 
       {{datapoint.time}} :
 
       <!-- <input type="text" [(ngModel)]="datapoint.event" name="userInputEvent + event.key">-->
 
-      <input type="text" [(ngModel)]="datapoint.event" name="datapointEvent +datapoint.event.key">
+      <input type="text" [(ngModel)]="datapoint.event" name="datapointEvent +{{i}}" >
       <button class="editEventButton" (click)="editEvent(datapoint.time, datapoint.event)">Edit Event</button>
 
     </div>
