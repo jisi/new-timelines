@@ -5,13 +5,15 @@ import {UserService} from "../services/user.service";
 
 @Component({
   selector: 'login',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  styleUrls: [ './login.component.scss' ]
 })
 
 export class LoginComponent {
 
   private userId = '';
-  private password = '';
+  private passwd = '';
+  private message = '';
 
   constructor(private userService: UserService, private router: Router) {
     if (this.userService.isLoggedIn()) {
@@ -19,8 +21,15 @@ export class LoginComponent {
     }
   }
 
+  onSubmit() {
+    this.login()
+  }
+
   login() {
-    this.userService.login(this.userId, this.password);
-    this.router.navigate(['/timeline-manager']);
+    this.message = '';
+    this.userService.login(this.userId, this.passwd).then(
+      () => { this.message = 'Anmeldung erfolgreich. Sie werden gleich weitergeleitet.'; this.router.navigate(['/timeline-manager'])},
+      () => { this.message = 'Anmeldung fehlgeschlagen. Bitte nochmals probieren.'; }
+    );
   }
 }

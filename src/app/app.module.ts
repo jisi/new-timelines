@@ -7,12 +7,17 @@ import {AppComponent} from './app.component';
 
 import {AuthMethods, AngularFireModule} from "angularfire2";
 
+//modules and components
 import {AuthModule} from './auth/auth.module';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {TimelineManagerComponent} from "./timeline-manager/timeline-manager.component";
 
+//pipes
 import {ValuesPipe} from './home/home.component';
+
+//directives
+import {MDLUpdateElementDirective} from "./shared/mdl-update-elements.directive";
 
 
 var firebaseConfig = {
@@ -28,20 +33,21 @@ var firebaseAuthConfig = {
 
 @NgModule({
   declarations: [
+    AboutComponent,
     AppComponent,
     HomeComponent,
-    AboutComponent,
+    MDLUpdateElementDirective,
     TimelineManagerComponent,
     ValuesPipe
   ],
   imports: [
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
     AuthModule,
     BrowserModule,
     FormsModule,
     HttpModule,
     JsonpModule,
     routing,
-    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, AuthMethods, AuthProviders } from 'angularfire2/angularfire2';
+import Promise = firebase.Promise;
 
 @Injectable()
 export class UserService {
@@ -14,8 +15,8 @@ export class UserService {
     );
   }
 
-  login(userId:string, password:string) {
-    this.af.auth.login(
+  public login(userId:string, password:string) {
+    return this.af.auth.login(
       {
         email: userId,
         password: password
@@ -27,13 +28,11 @@ export class UserService {
     );
   }
 
-  logout() {
-    this.af.auth.logout();
+  public logout() {
+    return this.af.auth.logout();
   }
 
   public isLoggedIn() : boolean {
-    //console.log("af:", this.af.auth.isUnsubscribed);
-    //return !this.af.auth.isUnsubscribed;
     return this.isAuth;
   }
 
