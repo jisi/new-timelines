@@ -20,10 +20,7 @@
 
     <button class="addEventButton" (click)="addEvent(timeline)">Add Event</button>
 
-
-
-    <br>
-    Events:
+    <div class="event-title">Events:</div>
 
     <div *ngFor="let datapoint of timeline.datapoints | values">
 
@@ -31,7 +28,7 @@
 
       <!-- <input type="text" [(ngModel)]="datapoint.event" name="userInputEvent + event.key">-->
 
-      <input type="text" [(ngModel)]="datapoint.event" name="datapointEvent +datapoint.key">
+      <input type="text" [(ngModel)]="datapoint.event" name="datapointEvent +datapoint.event.key">
       <button class="editEventButton" (click)="editEvent(datapoint.time, datapoint.event)">Edit Event</button>
 
     </div>

@@ -28,6 +28,7 @@ export class ValuesPipe implements PipeTransform {
 @Component({
   selector: 'login',
   templateUrl: './timeline-manager.component.html',
+  styleUrls: ['./timeline-manager.component.scss'],
   providers: [AngularFire]
 })
 
