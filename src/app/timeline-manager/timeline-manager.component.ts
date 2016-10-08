@@ -67,26 +67,26 @@ export class TimelineManagerComponent {
 
   private addEvent(timeline:any) {
 
+
+    console.log("timeline in addEvent: "+ timeline.$key);
+
     let localTimeline:any = this.af.database.list('/timelines/' + timeline.$key + '/datapoints');
 
     localTimeline.push({
       "time": timeline.event_date,
       "event": timeline.event_description
     });
-
-    /*timeline.event_date ='';
-     timeline.event_description='';*/
-
   }
 
-  private editEvent(temp1:string, temp2:string) {
+  private editEvent(timeline:any, temp1:string, temp2:string) {
 
-    console.log("temp stings in editEvent: "+ temp1 +', '+temp2);
+    console.log("temp strings in editEvent: "+ temp1 +', '+temp2);
 
     /*let localTimeline:any = this.af.database.list('/timelines/' + timeline.$key + '/datapoints');
-     localTimeline.update({
-     "event": timeline.event_description
-     });*/
+    localTimeline.update({
+      "time" : temp1,
+      "event": temp2
+    });*/
 
   }
 
