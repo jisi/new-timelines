@@ -1,0 +1,10 @@
+<h3>Neuste Timelines</h3>
+<ul class="timeline-list">
+  <li *ngFor="let tl of timelines | async">
+    <timeline-teaser
+      [title]=tl.title
+      [description]=tl.description
+
+    ></timeline-teaser>
+  </li>
+</ul>

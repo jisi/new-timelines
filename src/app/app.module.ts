@@ -3,14 +3,14 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
 import {routing, appRoutingProviders} from './app.routing';
-import {AppComponent} from './app.component';
-
 import {AuthMethods, AngularFireModule} from "angularfire2";
 
-//modules and components
+//own modules and components
+import {AppComponent} from './app.component';
 import {AuthModule} from './auth/auth.module';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
+import {TimelineListModule} from "./timeline-list/timeline-list.module";
 import {TimelineManagerComponent} from "./timeline-manager/timeline-manager.component";
 
 //pipes
@@ -48,6 +48,7 @@ var firebaseAuthConfig = {
     HttpModule,
     JsonpModule,
     routing,
+    TimelineListModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

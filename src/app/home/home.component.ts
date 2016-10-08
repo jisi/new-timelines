@@ -1,9 +1,8 @@
 import {Component} from '@angular/core';
 import {Pipe} from '@angular/core';
- import {PipeTransform} from '@angular/core'
+import {PipeTransform} from '@angular/core'
 import {AngularFire, FirebaseListObservable, AngularFireDatabase} from 'angularfire2';
 import {NgModule} from '@angular/core';
-
 
 //import {AppModule} from '.app.module';
 
@@ -52,7 +51,7 @@ export class HomeComponent {
 
   private addTimeline() {
 
-    var timestamp = (new Date()).toString();
+    var timestamp = new Date().toISOString();
 
     this.timelines.push({
       created_date: timestamp, title: this.timeline_title, description: this.timeline_description,
