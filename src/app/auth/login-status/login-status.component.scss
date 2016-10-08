@@ -1,0 +1,13 @@
+.login-status {
+  a {
+    color: #222;
+
+    &:hover {
+      color: #FF4081;
+    }
+
+    &:active {
+      color: #000;
+    }
+  }
+}

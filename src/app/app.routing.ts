@@ -1,22 +1,19 @@
-/**
- * Created by isa on 29/09/16.
- */
-
 import {Routes, RouterModule} from '@angular/router';
 
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
-
-import {LoginComponent} from './login/login.component';
 import {TimelineManagerComponent} from './timeline-manager/timeline-manager.component';
+import {LoginGuardService} from "./auth/services/login-guard.service";
 
-
-import { LoginGuardService } from './login-guard.service';
+declare let System: any; //will be transformed by webpack +2.0 to webpack_require
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', loadChildren: () => {
+      return System.import('./auth/auth.routing').then(result => result.AuthModule);
+    }
+  },
   { path: 'timeline-manager', component: TimelineManagerComponent, canActivate: [ LoginGuardService ] }
 ];
 

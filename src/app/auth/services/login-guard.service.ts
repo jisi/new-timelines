@@ -1,11 +1,8 @@
-/**
- * Created by isa on 03/10/16.
- */
-
 import { Injectable }     from '@angular/core';
 import { CanActivate }    from '@angular/router';
 import { Router } from '@angular/router';
-import { UserService } from './user.service';
+
+import { UserService } from './user.service.ts';
 
 @Injectable()
 export class LoginGuardService implements CanActivate {

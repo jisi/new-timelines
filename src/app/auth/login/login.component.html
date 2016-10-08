@@ -1,0 +1,17 @@
+<h3>Login</h3>
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="login-mask">
+  <div *ngIf="message">{{message}}</div>
+  <div class="mdl-textfield mdl-js-textfield login-mask__field">
+    <input id="userId" name="userId" type="email" [(ngModel)]="userId" class="mdl-textfield__input">
+    <label class="mdl-textfield__label" for="userId">E-Mail</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield login-mask__field">
+    <input id="passwd" name="passwd" type="password" [(ngModel)]="passwd" class="mdl-textfield__input">
+    <label class="mdl-textfield__label" for="passwd">Passwort</label>
+  </div>
+  <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent login-mask__button">
+    Login
+  </button>
+</form>
+
+

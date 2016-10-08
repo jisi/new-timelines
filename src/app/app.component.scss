@@ -1,0 +1,66 @@
+
+.main-header {
+  background-color: #E7E7E7;
+  color: #222;
+
+  a {
+    color: #222;
+
+    &:hover {
+      color: #FF4081;
+    }
+
+    &:active {
+      color: #000;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main-header {
+    display: block;
+  }
+}
+
+.main-header__title {
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.content-header__image {
+  width: 100%;
+  height: 45vh;
+  background: #000 url("../assets/unsplash_lines_big_low.jpg") 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.page-footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  a {
+    color: #ccc;
+
+    &:hover {
+      color: #FF4081;
+    }
+
+    &:active {
+      color: #000;
+    }
+  }
+}
+
+.page-footer__logo {
+  margin-bottom: 0;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.page-footer__legal {
+  line-height: 36px;
+}
