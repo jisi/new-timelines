@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class TimelineTeaserComponent {
   @Input('title') title: string;
   @Input('description') description: string;
+  @Input('id') id: string;
 }

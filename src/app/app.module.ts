@@ -10,6 +10,7 @@ import {AppComponent} from './app.component';
 import {AuthModule} from './auth/auth.module';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
+import {TimelineModule} from "./timeline/timeline.module";
 import {TimelineListModule} from "./timeline-list/timeline-list.module";
 import {TimelineManagerComponent} from "./timeline-manager/timeline-manager.component";
 
@@ -48,6 +49,7 @@ var firebaseAuthConfig = {
     HttpModule,
     JsonpModule,
     routing,
+    TimelineModule,
     TimelineListModule
   ],
   providers: [appRoutingProviders],
