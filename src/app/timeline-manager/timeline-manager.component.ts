@@ -103,9 +103,9 @@ export class TimelineManagerComponent {
     var ref = db.ref('/timelines/');
 
 
-    var datapointRef = ref.child(timeline.$key);
+    var timelineRef = ref.child(timeline.$key);
 
-    datapointRef.remove();
+    timelineRef.remove();
 
   }
 
