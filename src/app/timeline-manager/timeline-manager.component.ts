@@ -100,11 +100,8 @@ export class TimelineManagerComponent {
     var db = firebase.database();
     var ref = db.ref('/timelines/' + timeline.$key + '/datapoints');
 
-    
-    var datapointRef = ref.child(datapoint.key);
 
-    console.log('datapoint key: '+ datapoint.key);
-    console.log('timeline key: '+ timeline.$key);
+    var datapointRef = ref.child(datapoint.key);
 
     datapointRef.set({
       time: datapoint.time,
