@@ -10,24 +10,12 @@ import {NgModule} from '@angular/core';
 export class ValuesPipe implements PipeTransform {
   transform(value:any, args:any[] = null):any {
     if (value) {
-<<<<<<< HEAD
-
-      let list = [];
-
-      for (let key of Object.keys(value)) {
-        let o = value[key];
-        o['key'] = key;
-        list.push(o)
-      }
-      return list;
-=======
       return Object.keys(value).map((key) =>
       {
         let newObj = value[key];
         newObj['key'] = key;
         return newObj;
     });
->>>>>>> 72cd70e6687cb6a10ff6e7d92ea3ac631956587a
     }
   }
 }
