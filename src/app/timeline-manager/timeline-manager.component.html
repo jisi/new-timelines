@@ -24,10 +24,10 @@
 
     <div *ngFor="let datapoint of timeline.datapoints | values; let i = index">
 
-      {{datapoint.time}} :
+      <!--{{datapoint.time}} :-->
 
       <!-- <input type="text" [(ngModel)]="datapoint.event" name="userInputEvent + event.key">-->
-
+      <input type="text" [(ngModel)]="datapoint.time" name="datapointTime +{{i}}" >
       <input type="text" [(ngModel)]="datapoint.event" name="datapointEvent +{{i}}" >
       <button class="editEventButton" type="button" (click)="editEvent(timeline, datapoint)">Edit Event</button>
       <!--<button class="editEventButton" (click)="editEvent(timeline, datapoint.time, datapoint.event)">Edit Event</button>-->

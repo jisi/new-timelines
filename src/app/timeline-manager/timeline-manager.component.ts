@@ -2,9 +2,6 @@ import {Component} from '@angular/core';
 import {Pipe} from '@angular/core';
 import {PipeTransform} from '@angular/core'
 import {AngularFire, FirebaseListObservable, AngularFireDatabase} from 'angularfire2';
-import {NgModule} from '@angular/core';
-
-//import {AppModule} from '.app.module';
 
 @Pipe({name: 'values', pure: true})
 export class ValuesPipe implements PipeTransform {
@@ -19,16 +16,6 @@ export class ValuesPipe implements PipeTransform {
     }
   }
 }
-
-/*@Component({
- selector: 'home',
- templateUrl: '/home.component.html',
- providers: [AngularFire]
-
- })*/
-
-//directives: [NgGrid, NgGridItem],
-//pipes: [ValuesPipe],
 
 @Component({
   selector: 'login',
