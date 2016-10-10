@@ -10,7 +10,15 @@ import {NgModule} from '@angular/core';
 export class ValuesPipe implements PipeTransform {
   transform(value:any, args:any[] = null):any {
     if (value) {
-      return Object.keys(value).map(key => value[key]);
+
+      let list = [];
+
+      for (let key of Object.keys(value)) {
+        let o = value[key];
+        o['key'] = key;
+        list.push(o)
+      }
+      return list;
     }
   }
 }
@@ -77,34 +85,19 @@ export class TimelineManagerComponent {
     });
   }
 
-  /*private editEvent(timeline:any, temp1:string, temp2:string) {
-
-    console.log("temp strings in editEvent: "+ timeline.$key + temp1 +', '+temp2);
-
-    let localTimeline:any = this.af.database.list('/timelines/' + timeline.$key + '/datapoints/');
-    localTimeline.update({
-      "time" : temp1,
-      "event": temp2
-    });
-
-  }*/
 
   private editEvent(timeline:any, datapoint:any) {
 
-
-    /*let localDatapoint:any = this.af.database.list('/timelines/' + timeline.$key +
-    '/datapoints');*/
-
-    console.log('datapoint key: '+ datapoint.$key);
-    console.log('timeline key: '+ timeline.$key);
+    var db = firebase.database();
+    var ref = db.ref('/timelines/' + timeline.$key + '/datapoints');
 
 
-    /*let localTimeline:any = this.af.database.list('/timelines/' + timeline.$key +
-      '/datapoints/'+ timeline.datapoints[index].$key);
-    localTimeline.update({
-      "time" : datapoint.time,
-      "event": datapoint.event
-    });*/
+    var datapointRef = ref.child(datapoint.key);
+
+    datapointRef.set({
+      time: datapoint.time,
+      event: datapoint.event
+    });
 
   }
 
