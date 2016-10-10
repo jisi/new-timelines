@@ -10,6 +10,7 @@ import {NgModule} from '@angular/core';
 export class ValuesPipe implements PipeTransform {
   transform(value:any, args:any[] = null):any {
     if (value) {
+<<<<<<< HEAD
 
       let list = [];
 
@@ -19,6 +20,14 @@ export class ValuesPipe implements PipeTransform {
         list.push(o)
       }
       return list;
+=======
+      return Object.keys(value).map((key) =>
+      {
+        let newObj = value[key];
+        newObj['key'] = key;
+        return newObj;
+    });
+>>>>>>> 72cd70e6687cb6a10ff6e7d92ea3ac631956587a
     }
   }
 }
@@ -91,8 +100,11 @@ export class TimelineManagerComponent {
     var db = firebase.database();
     var ref = db.ref('/timelines/' + timeline.$key + '/datapoints');
 
-
+    
     var datapointRef = ref.child(datapoint.key);
+
+    console.log('datapoint key: '+ datapoint.key);
+    console.log('timeline key: '+ timeline.$key);
 
     datapointRef.set({
       time: datapoint.time,
