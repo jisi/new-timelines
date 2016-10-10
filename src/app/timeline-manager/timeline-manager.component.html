@@ -30,6 +30,7 @@
       <input type="text" [(ngModel)]="datapoint.time" name="datapointTime +{{i}}" >
       <input type="text" [(ngModel)]="datapoint.event" name="datapointEvent +{{i}}" >
       <button class="editEventButton" type="button" (click)="editEvent(timeline, datapoint)">Edit Event</button>
+      <button class="deleteEventButton" type="button" (click)="deleteEvent(timeline, datapoint)">Delete Event</button>
       <!--<button class="editEventButton" (click)="editEvent(timeline, datapoint.time, datapoint.event)">Edit Event</button>-->
 
     </div>

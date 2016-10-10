@@ -85,5 +85,17 @@ export class TimelineManagerComponent {
 
   }
 
+  private deleteEvent(timeline:any, datapoint:any) {
+
+    var db = firebase.database();
+    var ref = db.ref('/timelines/' + timeline.$key + '/datapoints');
+
+
+    var datapointRef = ref.child(datapoint.key);
+
+    datapointRef.remove();
+
+  }
+
 
 }
