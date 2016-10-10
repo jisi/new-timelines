@@ -10,7 +10,6 @@ import {NgModule} from '@angular/core';
 export class ValuesPipe implements PipeTransform {
   transform(value:any, args:any[] = null):any {
     if (value) {
-      console.log(value);
       return Object.keys(value).map(key => value[key]);
     }
   }
@@ -78,14 +77,33 @@ export class TimelineManagerComponent {
     });
   }
 
-  private editEvent(timeline:any, temp1:string, temp2:string) {
+  /*private editEvent(timeline:any, temp1:string, temp2:string) {
 
-    console.log("temp strings in editEvent: "+ temp1 +', '+temp2);
+    console.log("temp strings in editEvent: "+ timeline.$key + temp1 +', '+temp2);
 
-    /*let localTimeline:any = this.af.database.list('/timelines/' + timeline.$key + '/datapoints');
+    let localTimeline:any = this.af.database.list('/timelines/' + timeline.$key + '/datapoints/');
     localTimeline.update({
       "time" : temp1,
       "event": temp2
+    });
+
+  }*/
+
+  private editEvent(timeline:any, datapoint:any) {
+
+
+    /*let localDatapoint:any = this.af.database.list('/timelines/' + timeline.$key +
+    '/datapoints');*/
+
+    console.log('datapoint key: '+ datapoint.$key);
+    console.log('timeline key: '+ timeline.$key);
+
+
+    /*let localTimeline:any = this.af.database.list('/timelines/' + timeline.$key +
+      '/datapoints/'+ timeline.datapoints[index].$key);
+    localTimeline.update({
+      "time" : datapoint.time,
+      "event": datapoint.event
     });*/
 
   }
