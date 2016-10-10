@@ -10,7 +10,12 @@ import {NgModule} from '@angular/core';
 export class ValuesPipe implements PipeTransform {
   transform(value:any, args:any[] = null):any {
     if (value) {
-      return Object.keys(value).map(key => value[key]);
+      return Object.keys(value).map((key) => 
+      {
+        let newObj = value[key];
+        newObj['key'] = key;
+        return newObj;
+    });
     }
   }
 }
@@ -95,7 +100,7 @@ export class TimelineManagerComponent {
     /*let localDatapoint:any = this.af.database.list('/timelines/' + timeline.$key +
     '/datapoints');*/
 
-    console.log('datapoint key: '+ datapoint.$key);
+    console.log('datapoint key: '+ datapoint.key);
     console.log('timeline key: '+ timeline.$key);
 
 
