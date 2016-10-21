@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {OnInit } from '@angular/core';
+import {TimelinesService} from "../shared/model/timelines.service";
+import {Timeline} from "../shared/model/timeline";
+import {Event} from "../shared/model/event";
+import {Observable} from "rxjs/Rx";
 
 @Component({
   selector: 'timeline',
@@ -7,9 +13,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimelineComponent implements OnInit {
 
-  constructor() { }
+  timeline: Observable<Timeline>;
+  events : Observable<Event[]>;
+
+  constructor(private timelinesService: TimelinesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    const id = this.route.snapshot.params['id'];
+    
+    this.timeline = this.timelinesService.getTimelineByKey(id);
+    this.events = this.timelinesService.getEventsForTimeline(id);
   }
-
 }

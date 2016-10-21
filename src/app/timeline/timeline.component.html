@@ -1,3 +1,25 @@
-<p>
-  timeline works!
-</p>
+
+
+<div *ngIf="!(timeline | async)?.is_private">
+  <h1>
+    {{ (timeline | async)?.title }}
+  </h1>
+  <p>
+    {{ (timeline | async)?.description }}
+  </p>
+  <p>Erstellt: {{ (timeline | async)?.created_date }}</p>
+
+
+</div>
+<div *ngIf="(timeline | async)?.is_private">
+  Die angeforderte Timeline ist nicht (mehr) öffentlich erreichbar.
+</div>
+
+<ul class="event-list">
+  <li *ngFor="let ev of events | async">
+    {{ev.title}}<br>
+    {{ev.description}}<br>
+    {{ev.start}}<br>
+    {{ev.end}}
+  </li>
+</ul>

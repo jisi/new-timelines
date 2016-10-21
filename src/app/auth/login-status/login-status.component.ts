@@ -19,7 +19,7 @@ import {UserService} from "../services/user.service";
 export class LoginStatusComponent {
 
   constructor(public af: AngularFire, private userService: UserService, private router: Router) {
-    this.af.auth.subscribe(auth => console.log(auth));
+    this.af.auth.subscribe();
   }
 
   logout() {

@@ -14,12 +14,19 @@ import {TimelineModule} from "./timeline/timeline.module";
 import {TimelineListModule} from "./timeline-list/timeline-list.module";
 import {TimelineManagerComponent} from "./timeline-manager/timeline-manager.component";
 
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/concatMap';
+import 'rxjs/add/operator/combineLatest';
+
 //pipes
 import {ValuesPipe} from './timeline-manager/timeline-manager.component';
 
 //directives
 import {MDLUpdateElementDirective} from "./shared/mdl-update-elements.directive";
 
+//services
+import {TimelinesService} from "./shared/model/timelines.service";
 
 var firebaseConfig = {
   apiKey: "AIzaSyA6THjic5wZMGInGdlmHeAYG80fB8RoM3s",
@@ -52,7 +59,7 @@ var firebaseAuthConfig = {
     TimelineModule,
     TimelineListModule
   ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders, TimelinesService],
   bootstrap: [AppComponent]
 })
 
