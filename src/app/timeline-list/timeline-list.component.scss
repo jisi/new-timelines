@@ -1,15 +1,10 @@
 .timeline-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
+  margin: 0 -16px 0 0;
   padding: 0;
   list-style-type: none;
 
-  &>li {
-    min-width: 240px;
-    width: 32%;
-    display: inline-block;
-    margin: 0 1% 1% 0;
-
+  li {
+    margin-right: 16px;
+    margin-bottom: 16px;
   }
 }

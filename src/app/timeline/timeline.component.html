@@ -1,25 +1,31 @@
-
-
-<div *ngIf="!(timeline | async)?.is_private">
-  <h1>
-    {{ (timeline | async)?.title }}
-  </h1>
-  <p>
-    {{ (timeline | async)?.description }}
-  </p>
-  <p>Erstellt: {{ (timeline | async)?.created_date }}</p>
-
-
+<div class="mdl-grid" *ngIf="!(timeline | async)?.is_private">
+  <div class="mdl-cell mdl-cell--12-col">
+    <h1>
+      Timeline «{{ (timeline | async)?.title }}»
+    </h1>
+  </div>
+  <div class="mdl-cell mdl-cell--8-col mdl-cell--bottom">
+      {{ (timeline | async)?.description }}
+  </div>
+  <div class="mdl-cell mdl-cell--4-col mdl-typography--text-right mdl-cell--bottom">
+    Author: <br>
+    Erstellt: {{ (timeline | async)?.created_date | date:"dd.MM.yyyy" }}
+  </div>
+  <div class="mdl-cell mdl-cell--12-col mdl-shadow--2dp mdl-color--white event-box">
+    <div class="event-box__timeline"></div>
+    <ul class="event-list">
+      <li *ngFor="let ev of events | async">
+        <div class="event-list__item">
+          {{ev.start * 1000 | date:"dd.MM.yyyy"}}<span *ngIf="ev.end"> - {{ev.end * 1000 | date:"dd.MM.yyyy"}}</span><br>
+          <b>{{ev.title}}</b><br>
+          {{ev.description}}
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
-<div *ngIf="(timeline | async)?.is_private">
-  Die angeforderte Timeline ist nicht (mehr) öffentlich erreichbar.
+<div class="mdl-grid" *ngIf="(timeline | async)?.is_private">
+  <div class="mdl-cell mdl-cell--12-col">
+    Die angeforderte Timeline ist nicht (mehr) öffentlich erreichbar.
+  </div>
 </div>
-
-<ul class="event-list">
-  <li *ngFor="let ev of events | async">
-    {{ev.title}}<br>
-    {{ev.description}}<br>
-    {{ev.start}}<br>
-    {{ev.end}}
-  </li>
-</ul>

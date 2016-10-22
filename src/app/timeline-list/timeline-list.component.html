@@ -1,6 +1,6 @@
 <h3>Neuste Timelines</h3>
-<ul class="timeline-list">
-  <li *ngFor="let tl of timelines | async">
+<ul class="timeline-list mdl-grid">
+  <li *ngFor="let tl of timelines | async" class="mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--12-col-phone">
     <timeline-teaser
       [title]=tl.title
       [description]=tl.description
