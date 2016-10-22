@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import {Observable} from "rxjs/Rx";
+import {OnInit} from '@angular/core';
+import {TimelinesService} from "../shared/model/timelines.service";
+import {Timeline} from "../shared/model/timeline";
 
 @Component({
   selector: 'timeline-list',
@@ -7,17 +10,13 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
   styleUrls: ['./timeline-list.component.scss']
 })
 
-export class TimelineListComponent {
+export class TimelineListComponent implements OnInit {
 
-  timelines: FirebaseListObservable<any>;
+  timelines: Observable<Timeline[]>;
 
-  constructor(af: AngularFire) {
+  constructor(private timelinesService: TimelinesService) { }
 
-    this.timelines = af.database.list('/timelines', {
-      query: {
-        limitToLast: 6,
-        orderByChild: 'created_date'
-      }
-    });
+  ngOnInit() {
+    this.timelines = this.timelinesService.getNewestTimelines(6);
   }
 }

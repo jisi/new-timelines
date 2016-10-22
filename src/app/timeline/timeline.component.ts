@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {OnInit } from '@angular/core';
-import {TimelinesService} from "../shared/model/timelines.service";
-import {Timeline} from "../shared/model/timeline";
 import {Event} from "../shared/model/event";
 import {Observable} from "rxjs/Rx";
+import {TimelinesService} from "../shared/model/timelines.service";
+import {Timeline} from "../shared/model/timeline";
 
 @Component({
   selector: 'timeline',

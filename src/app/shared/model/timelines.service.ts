@@ -25,4 +25,13 @@ export class TimelinesService {
     return timelineEvents;
   }
 
+  getNewestTimelines(count = 10): Observable<Timeline[]> {
+    return this.db.list('/timelines', {
+      query: {
+        limitToLast: count,
+        orderByChild: 'created_date'
+      }
+    });
+  }
+
 }
