@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {Observable} from "rxjs/Rx";
 import {OnInit} from '@angular/core';
-import {TimelinesService} from "../shared/model/timelines.service";
-import {Timeline} from "../shared/model/timeline";
+import {TimelinesService} from "../../shared/model/timelines.service";
+import {Timeline} from "../../shared/model/timeline";
 
 @Component({
   selector: 'timeline-list',

@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { TimelineTeaserComponent } from './timeline-teaser.component';
+import { TimelineDetailComponent } from './timeline-detail.component';
 
-describe('Component: TimelineTeaser', () => {
+describe('Component: TimelineDetail', () => {
   it('should create an instance', () => {
-    let component = new TimelineTeaserComponent();
+    let component = new TimelineDetailComponent();
     expect(component).toBeTruthy();
   });
 });
