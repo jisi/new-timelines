@@ -1,10 +1,32 @@
+@import "../styles/_media-queries.scss";
 
 .main-header {
   background-color: #E7E7E7;
   color: #222;
+}
+
+.main-header__wrapper {
+  padding: 12px 0;
+  margin: 0 8px;
+
+  @include tablet {
+    margin: 0 32px;
+  }
+
+  @include desktop {
+    margin: 0 auto;
+    max-width: 1024px;
+  }
+}
+
+.main-header__title,
+.main-nav {
+  font-size: 14px;
 
   a {
+    margin-left: 16px;
     color: #222;
+    text-decoration: none;
 
     &:hover {
       color: #FF4081;
@@ -14,27 +36,55 @@
       color: #000;
     }
   }
-}
 
-@media screen and (max-width: 1024px) {
-  .main-header {
-    display: block;
+  & > a:first-child {
+    margin-left: 0;
   }
+
 }
 
 .main-header__title {
+  margin-left: 0;
   font-weight: 300;
   font-size: 16px;
   letter-spacing: 5px;
   text-transform: uppercase;
+
+  a {
+    font-weight: 300;
+  }
 }
 
-.page-footer {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.main-nav {
+  display: inline-block;
+  margin-right: 0;
+  @include tablet-up {
+    text-align: right;
+  }
+}
+
+.main-content {
+  margin: 8px;
+  min-height: 35vh;
+
+  @include tablet {
+    margin: 16px 32px;
+  }
+
+  @include desktop {
+    margin: 16px auto;
+    max-width: 1024px;
+  }
+}
+
+.main-footer {
+  background-color: #222;
+  font-size: 14px;
+  color: #ccc;
 
   a {
     color: #ccc;
+    text-decoration: none;
 
     &:hover {
       color: #FF4081;
@@ -46,14 +96,50 @@
   }
 }
 
-.page-footer__logo {
+.main-footer__wrapper {
+  @extend .main-header__wrapper;
+}
+
+.main-footer__logo {
   margin-bottom: 0;
   font-weight: 300;
   font-size: 14px;
   letter-spacing: 5px;
   text-transform: uppercase;
+  color: #ccc;
 }
 
-.page-footer__legal {
-  line-height: 36px;
+.main-footer__links {
+
+  margin: 8px 0 0 0;
+
+  li {
+    display: inline-block;
+    margin-right: 16px;
+  }
 }
+
+.main-footer__legal {
+  text-align: right;
+}
+
+
+/*
+  <footer class="main-footer">
+    <div class="main-footer__wrapper">
+      <div class="main-footer__navigation">
+        <div class="main-footer__logo">Timelines</div>
+        <ul class="main-footer__links">
+          <li><a [routerLink]="['']">Home</a></li>
+          <li><a [routerLink]="['/about']">About</a></li>
+          <li><a [routerLink]="['/login']">Login</a></li>
+          <li><a [routerLink]="['/timeline-manager']">Timeline Manager</a></li>
+        </ul>
+      </div>
+      <div class="main-footer__meta">
+        <div class="main-footer__legal">&copy;2016 by Timelines</div>
+      </div>
+    </div>
+  </footer>
+
+*/

@@ -1,33 +1,32 @@
-<div mdl class="mdl-layout">
-  <header class="mdl-layout__header mdl-layout__header--transparent main-header">
-    <div class="mdl-layout__header-row">
-      <div class="mdl-layout-title main-header__title">Timelines</div>
-      <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" [routerLink]="['']">Home</a>
-        <a class="mdl-navigation__link" [routerLink]="['/about']">About</a>
+  <header class="main-header">
+    <div class="mdl-grid main-header__wrapper">
+      <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--4-col-phone main-header__title">
+        <a [routerLink]="['']">Timelines</a>
+      </div>
+      <nav class="mdl-cell mdl-cell--8-col mdl-cell--5-col-tablet mdl-cell--4-col-phone main-nav">
+          <a [routerLink]="['']">Home</a>
+          <a [routerLink]="['/about']">About</a>
+          <login-status></login-status>
       </nav>
-      <login-status></login-status>
     </div>
   </header>
-  <main class="mdl-layout__content">
-    <section class="main-content">
+  <main class="main-content">
       <router-outlet></router-outlet>
-    </section>
-    <footer class="mdl-mini-footer page-footer">
-      <div class="mdl-mini-footer__left-section">
-        <div class="mdl-logo page-footer__logo">Timelines</div>
-        <ul class="mdl-mini-footer__link-list">
+  </main>
+  <footer class="main-footer">
+    <div class="main-footer__wrapper mdl-grid">
+      <div class="main-footer__navigation mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+        <div class="main-footer__logo">Timelines</div>
+        <ul class="main-footer__links">
           <li><a [routerLink]="['']">Home</a></li>
           <li><a [routerLink]="['/about']">About</a></li>
           <li><a [routerLink]="['/login']">Login</a></li>
           <li><a [routerLink]="['/timeline-manager']">Timeline Manager</a></li>
         </ul>
       </div>
-      <div class="mdl-mini-footer__right-section">
-        <div class="page-footer__legal">&copy;2016 by Timelines</div>
+      <div class="main-footer__meta mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+        <div class="main-footer__legal">&copy;2016 by Timelines</div>
       </div>
-    </footer>
-  </main>
-</div>
+    </div>
+  </footer>
 

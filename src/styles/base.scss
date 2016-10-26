@@ -6,6 +6,10 @@ body {
   font-size: 16px;
 }
 
+h1, h2, h3 {
+  font-weight: 300;
+}
+
 h1 {
   margin: 24px 0 12px;
   font-size: 36px;
@@ -37,15 +41,5 @@ ul, li {
 
 b {
   font-weight: 600;
-}
-
-.content-header {
-  font-weight: 300;
-  font-size: 24px;
-}
-
-.main-content {
-  margin: 40px 80px;
-  min-height: 35vh
 }
 
