@@ -4,8 +4,9 @@
         <a [routerLink]="['']">Timelines</a>
       </div>
       <nav class="mdl-cell mdl-cell--8-col mdl-cell--5-col-tablet mdl-cell--4-col-phone main-nav">
-          <a [routerLink]="['']">Home</a>
-          <a [routerLink]="['/about']">About</a>
+          <a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+          <a [routerLink]="['/timeline']" routerLinkActive="active">Timelines</a>
+          <a [routerLink]="['/about']" routerLinkActive="active">Infos</a>
           <login-status></login-status>
       </nav>
     </div>
@@ -18,9 +19,9 @@
       <div class="main-footer__navigation mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
         <div class="main-footer__logo">Timelines</div>
         <ul class="main-footer__links">
-          <li><a [routerLink]="['']">Home</a></li>
-          <li><a [routerLink]="['/about']">About</a></li>
-          <li><a [routerLink]="['/login']">Login</a></li>
+          <li><a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+          <li><a [routerLink]="['/timeline']" routerLinkActive="active">Timelines</a></li>
+          <li><a [routerLink]="['/about']" routerLinkActive="active">Infos</a></li>
           <li><a [routerLink]="['/timeline-manager']">Timeline Manager</a></li>
         </ul>
       </div>

@@ -7,9 +7,9 @@ import {UserService} from "../services/user.service";
 @Component({
   selector: 'login-status',
   template: `
-            <a *ngIf="af.auth | async" [routerLink]="['/timeline-manager']">Timeline Manager</a>
+            <a *ngIf="af.auth | async" [routerLink]="['/timeline-manager']" routerLinkActive="active">Timeline Manager</a>
             <a *ngIf="af.auth | async" (click)="logout()">Logout</a>
-            <a *ngIf="!(af.auth | async)" [routerLink]="['/login']">Login</a>
+            <a *ngIf="!(af.auth | async)" [routerLink]="['/login']" routerLinkActive="active">Login</a>
     `,
   encapsulation: ViewEncapsulation.None
 })

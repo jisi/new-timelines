@@ -2,6 +2,7 @@ import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {TimelineComponent} from "./timeline.component";
 import {TimelineDetailComponent} from "./timeline-detail/timeline-detail.component";
+import {TimelineOverviewComponent} from "./timeline-overview/timeline-overview.component";
 
 const TimelineRoutes: Routes = [
   {
@@ -9,6 +10,9 @@ const TimelineRoutes: Routes = [
   },
   {
     path: 'timeline/:id', component: TimelineDetailComponent
+  },
+  {
+    path: 'timeline', component: TimelineOverviewComponent
   }
 ];
 

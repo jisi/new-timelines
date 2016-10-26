@@ -28,7 +28,8 @@
     color: #222;
     text-decoration: none;
 
-    &:hover {
+    &:hover,
+    &.active {
       color: #FF4081;
     }
 
@@ -57,9 +58,12 @@
 
 .main-nav {
   display: inline-block;
-  margin-right: 0;
   @include tablet-up {
     text-align: right;
+  }
+
+  a:last-child {
+    margin-right: -8px;
   }
 }
 
@@ -90,8 +94,9 @@
       color: #FF4081;
     }
 
-    &:active {
-      color: #000;
+    &:active,
+    &.active {
+      color: #FFF;
     }
   }
 }
@@ -122,24 +127,3 @@
 .main-footer__legal {
   text-align: right;
 }
-
-
-/*
-  <footer class="main-footer">
-    <div class="main-footer__wrapper">
-      <div class="main-footer__navigation">
-        <div class="main-footer__logo">Timelines</div>
-        <ul class="main-footer__links">
-          <li><a [routerLink]="['']">Home</a></li>
-          <li><a [routerLink]="['/about']">About</a></li>
-          <li><a [routerLink]="['/login']">Login</a></li>
-          <li><a [routerLink]="['/timeline-manager']">Timeline Manager</a></li>
-        </ul>
-      </div>
-      <div class="main-footer__meta">
-        <div class="main-footer__legal">&copy;2016 by Timelines</div>
-      </div>
-    </div>
-  </footer>
-
-*/

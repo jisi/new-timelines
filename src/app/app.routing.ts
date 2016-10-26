@@ -8,13 +8,13 @@ import {LoginGuardService} from "./auth/services/login-guard.service";
 declare let System: any; //will be transformed by webpack +2.0 to webpack_require
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', loadChildren: () => {
       return System.import('./auth/auth.routing').then(result => result.AuthModule);
     }
   },
-  { path: 'timeline-manager', component: TimelineManagerComponent, canActivate: [ LoginGuardService ] }
+  { path: 'timeline-manager', component: TimelineManagerComponent, canActivate: [ LoginGuardService ] },
+  { path: '', component: HomeComponent }
 ];
 
 export const appRoutingProviders: any[] = [];
