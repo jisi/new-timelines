@@ -1,6 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {OnInit } from '@angular/core';
 import {Event} from "../shared/model/event";
 import {Observable} from "rxjs/Rx";
 import {TimelinesService} from "../shared/model/timelines.service";
@@ -13,6 +12,8 @@ import {Timeline} from "../shared/model/timeline";
 })
 export class TimelineComponent implements OnInit {
 
+  @Input('showMetadata') showMetadata = true;
+
   timeline: Observable<Timeline>;
   events : Observable<Event[]>;
 
@@ -20,7 +21,7 @@ export class TimelineComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
-    
+
     this.timeline = this.timelinesService.getTimelineByKey(id);
     this.events = this.timelinesService.getEventsForTimeline(id);
   }

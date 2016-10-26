@@ -1,4 +1,4 @@
-  <header class="main-header">
+  <header class="main-header" *ngIf="!isEmbedView">
     <div class="mdl-grid main-header__wrapper">
       <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--4-col-phone main-header__title">
         <a [routerLink]="['']">Timelines</a>
@@ -14,7 +14,7 @@
   <main class="main-content">
       <router-outlet></router-outlet>
   </main>
-  <footer class="main-footer">
+  <footer class="main-footer" *ngIf="!isEmbedView">
     <div class="main-footer__wrapper mdl-grid">
       <div class="main-footer__navigation mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
         <div class="main-footer__logo">Timelines</div>
