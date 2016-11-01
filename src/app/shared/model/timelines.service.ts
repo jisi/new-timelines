@@ -20,7 +20,7 @@ export class TimelinesService {
 
     let timelineEvents = eventKeys
       .map(ept => ept.map( event => this.db.object('/events/'+ event.$key)))
-      .concatMap(fbObjObs => Observable.combineLatest(fbObjObs)).do(console.log);
+      .concatMap(fbObjObs => Observable.combineLatest(fbObjObs));
 
     return timelineEvents;
   }
