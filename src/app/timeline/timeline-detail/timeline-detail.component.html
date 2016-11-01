@@ -1,9 +1,7 @@
+<h1>
+  Timeline «{{ (timeline | async)?.title }}»
+</h1>
 <div class="mdl-grid" *ngIf="!(timeline | async)?.is_private">
-  <div class="mdl-cell mdl-cell--12-col">
-    <h1>
-      Timeline «{{ (timeline | async)?.title }}»
-    </h1>
-  </div>
   <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--4-col-phone  mdl-cell--bottom">
     {{ (timeline | async)?.description }}
   </div>

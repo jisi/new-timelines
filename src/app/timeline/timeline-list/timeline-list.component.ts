@@ -1,6 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Observable} from "rxjs/Rx";
-import {OnInit} from '@angular/core';
 import {TimelinesService} from "../../shared/model/timelines.service";
 import {Timeline} from "../../shared/model/timeline";
 
@@ -12,11 +11,24 @@ import {Timeline} from "../../shared/model/timeline";
 
 export class TimelineListComponent implements OnInit {
 
+  @Input('cssclasses') cssclasses = "";
+  @Input('count') count = 6;
+  @Input('mode') mode = 'newest';
+
   timelines: Observable<Timeline[]>;
 
   constructor(private timelinesService: TimelinesService) { }
 
   ngOnInit() {
-    this.timelines = this.timelinesService.getNewestTimelines(6);
+    switch (this.mode) {
+      case "newest":
+        this.timelines = this.timelinesService.getNewestTimelines(this.count);
+        break;
+      case "popular":
+        this.timelines = null;
+        break;
+      default:
+        this.timelines = null;
+    }
   }
 }
