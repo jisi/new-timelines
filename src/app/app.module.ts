@@ -19,7 +19,7 @@ import 'rxjs/add/operator/concatMap';
 import 'rxjs/add/operator/combineLatest';
 
 //pipes
-import {ValuesPipe} from './timeline-manager/timeline-manager.component';
+//import {ValuesPipe} from './timeline-manager/timeline-manager.component';
 
 //directives
 import {MDLUpdateElementDirective} from "./shared/mdl-update-elements.directive";
@@ -45,7 +45,7 @@ var firebaseAuthConfig = {
     HomeComponent,
     MDLUpdateElementDirective,
     TimelineManagerComponent,
-    ValuesPipe
+    //ValuesPipe
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),

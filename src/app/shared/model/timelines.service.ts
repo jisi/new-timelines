@@ -34,4 +34,11 @@ export class TimelinesService {
     });
   }
 
+  getTimelinesForUser(key: string) : Observable<Timeline[]> {  
+    let userKeys = this.db.list('timelinesPerUser/'+key);  
+    let timelinesUser = userKeys 
+      .map(tpu => tpu.map (timeline => this.db.object('/timelines/'+timeline.$key))) 
+      .concatMap(fbObjObs => Observable.combineLatest(fbObjObs)).do(console.log);  
+
+    return timelinesUser; }
 }
