@@ -1,4 +1,8 @@
 <h1>Login</h1>
+<p>
+  Willkommen zurück! Bitte melden Sie sich an.<br>
+  Noch kein Konto? <a [routerLink]="['/signup']">Registrieren Sie sich.</a>
+</p>
 <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="login-mask">
   <div *ngIf="message">{{message}}</div>
   <div class="mdl-textfield mdl-js-textfield login-mask__field">

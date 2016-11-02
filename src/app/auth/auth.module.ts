@@ -2,11 +2,12 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 
+import {AuthRouting} from "./auth.routing";
 import {LoginStatusComponent} from "./login-status/login-status.component";
 import {LoginComponent} from "./login/login.component";
 import {LoginGuardService} from "./services/login-guard.service";
+import {SignupComponent} from "./signup/signup.component";
 import {UserService} from "./services/user.service";
-import {AuthRouting} from "./auth.routing";
 
 @NgModule({
   imports: [
@@ -16,11 +17,13 @@ import {AuthRouting} from "./auth.routing";
   ],
   declarations: [
     LoginComponent,
-    LoginStatusComponent
+    LoginStatusComponent,
+    SignupComponent
   ],
   exports: [
     LoginComponent,
-    LoginStatusComponent
+    LoginStatusComponent,
+    SignupComponent
   ],
   providers: [
     LoginGuardService,
