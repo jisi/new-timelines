@@ -1,19 +1,12 @@
-<div class="demo-card-event mdl-card mdl-shadow--2dp timeline-teaser {{ colorClass }}">
+<a [routerLink]="['/timeline/', id]" class="demo-card-event mdl-card mdl-shadow--2dp timeline-teaser {{ colorClass }}">
   <div class="mdl-card__title mdl-card--expand">
     <h2>
       {{ title | trunc:30 }}
     </h2>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <a [routerLink]="['/timeline/', id]" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+    <span [routerLink]="['/timeline/', id]" class="mdl-button">
       Ansehen
-    </a>
-    <div class="mdl-layout-spacer"></div>
-    <div class="timeline-teaser__icon">
-      <i class="material-icons" id="{{id}}">information</i>
-      <div class="mdl-tooltip" [attr.for]="id">
-        {{description}}
-      </div>
-    </div>
+    </span>
   </div>
-</div>
+</a>
